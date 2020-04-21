@@ -12,11 +12,15 @@
 */
 
 Route::get('/test',function(){
-  return view('test');
+  $name = request('name');
+  return view('test',[
+    'name'  =>  $name,
+  ]);
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
     // return ['foo' => 'bar', 'name' => 'omar', 'friend' => 'aminur'];
-
+    $name = request('name');
+    return $name;
 });
